@@ -1,0 +1,186 @@
+/*
+ * Copyright (c) 2015 Martin Donath <md@struct.cc>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+@import "syntax-variables";
+
+atom-text-editor, :host {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number.cursor-line {
+      background-color: @syntax-gutter-background-color-selected;
+      color: @syntax-gutter-text-color-selected;
+    }
+
+    .linter-error {
+      box-shadow: 2px 0 0 @syntax-error-color inset;
+    }
+
+    .linter-error .icon-right:before {
+      font-size: 0.8em !important;
+      content: "" !important;
+    }
+
+    .line-number.git-line-removed:before {
+      top: 0 !important;
+    }
+  }
+
+  .wrap-guide {
+    color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .search-results .marker .region {
+    background-color: @syntax-result-marker-background;
+  }
+
+  .search-results .marker.current-result .region {
+    background-color: @syntax-result-marker-background-selected;
+  }
+}
+
+atom-text-editor.is-focused, :host(.is-focused) {
+
+  .cursor {
+    border-color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  .line.cursor-line,
+  .line-number.cursor-line-no-selection {
+    background-color: @syntax-gutter-background-color-selected;
+  }
+}
+
+.source {
+
+  .comment {
+    color: @syntax-comment-color;
+  }
+
+  .string {
+    color: @syntax-string-color;
+    background-color: fadeout(@syntax-string-color, 90%);
+    border-radius: 3px;
+
+    &.punctuation {
+      background: transparent;
+    }
+
+    .regexp {
+      color: @syntax-string-regexp-color;
+      background: transparent;
+
+      .punctuation {
+        color: inherit;
+      }
+    }
+  }
+
+  .constant.language,
+  .constant.character,
+  .constant.other {
+    color: @syntax-constant-color;
+    background-color: fadeout(@syntax-constant-color, 90%);
+    border-radius: 3px;
+  }
+
+  .constant.numeric {
+    color: @syntax-numeric-color;
+  }
+
+  .keyword {
+    color: @syntax-keyword-color;
+  }
+
+  .bracket {
+    color: white;
+  }
+
+  .storage {
+    color: @syntax-storage-color;
+
+    &.type {
+      color: @syntax-type-color;
+    }
+  }
+
+  .support {
+    color: @syntax-support-color;
+
+    &.function {
+      color: @syntax-function-any-color;
+    }
+
+    &.function.C99,
+    &.function.built-in {
+      color: @syntax-support-color;
+    }
+  }
+
+  .entity {
+
+    &.other.attribute-name {
+      color: @syntax-entity-attribute-color;
+    }
+
+    &.name.tag {
+      color: @syntax-entity-tag-color;
+    }
+
+    &.name.function {
+      color: @syntax-entity-function-color;
+    }
+  }
+
+  .invalid {
+    color: #F8F8F0;
+    background-color: #FF0080;
+
+    &.deprecated {
+      background-color: #AE81FF;
+    }
+  }
+}
+
+.variable.parameter {
+  color: #FADC3F;
+}
+
+.variable.other {
+  color: #B3B3B3;
+}

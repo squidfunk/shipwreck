@@ -1,0 +1,11 @@
+{
+  "name": "shipwreck",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "Shipwreck Atom Syntax Theme",
+  "repository": "https://github.com/squidfunk/shipwreck",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  }
+}
