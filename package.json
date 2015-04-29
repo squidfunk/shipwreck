@@ -1,7 +1,7 @@
 {
   "name": "shipwreck",
   "theme": "syntax",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shipwreck Atom Syntax Theme",
   "repository": "https://github.com/squidfunk/shipwreck",
   "license": "MIT",
